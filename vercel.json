@@ -3,6 +3,14 @@
   "outputDirectory": "dist",
   "routes": [
     {
+      "src": "/_expo/static/js/(.*)",
+      "dest": "/_expo/static/js/$1"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
