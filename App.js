@@ -10,7 +10,7 @@ import Journeys from './src/components/Journeys/Journeys';
 import Meditation from './src/components/Meditation/Meditation';
 import Journal from './src/components/Journal/Journal';
 import SourceMaterial from './src/components/SourceMaterial/SourceMaterial';
-import MirrorAudio from './src/components/Audio/MirrorAudio'; // Add this import
+import MirrorAudio from './src/components/Audio/MirrorAudio';
 
 import { colors } from './src/styles/Global';
 
@@ -32,7 +32,7 @@ export default function App() {
               case 'Library':
                 iconName = focused ? 'library' : 'library-outline';
                 break;
-              case 'Audio':  // Add this case
+              case 'Audio':
                 iconName = focused ? 'musical-notes' : 'musical-notes-outline';
                 break;
               case 'Journeys':
@@ -67,7 +67,7 @@ export default function App() {
       >
         <Tab.Screen name="Observatory" component={Observatory} />
         <Tab.Screen name="Library" component={Library} />
-        <Tab.Screen name="Audio" component={MirrorAudio} /> {/* Add this line */}
+        <Tab.Screen name="Audio" component={MirrorAudio} />
         <Tab.Screen name="Journeys" component={Journeys} />
         <Tab.Screen name="Meditation" component={Meditation} />
         <Tab.Screen name="Journal" component={Journal} />
@@ -75,4 +75,4 @@ export default function App() {
       </Tab.Navigator>
     </NavigationContainer>
   );
-}"// Audio tab update" 
+}

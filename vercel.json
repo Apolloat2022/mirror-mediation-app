@@ -1,10 +1,11 @@
 {
   "version": 2,
+  "buildCommand": "npx expo export --platform web",
   "outputDirectory": "dist",
   "routes": [
     {
-      "src": "/_expo/static/js/(.*)",
-      "dest": "/_expo/static/js/$1"
+      "src": "/_expo/(.*)",
+      "dest": "/_expo/$1"
     },
     {
       "src": "/assets/(.*)",
