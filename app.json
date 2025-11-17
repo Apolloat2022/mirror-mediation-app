@@ -1,88 +1,34 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
-
-// Import your components
-import Observatory from './src/components/HomeScreen/Observatory';
-import Library from './src/components/Library/Library';
-import Journeys from './src/components/Journeys/Journeys';
-import Meditation from './src/components/Meditation/Meditation';
-import Journal from './src/components/Journal/Journal';
-import SourceMaterial from './src/components/SourceMaterial/SourceMaterial';
-import MirrorAudio from './src/components/Audio/MirrorAudio'; // Add this import
-
-import { colors } from './src/styles/Global';
-
-const Tab = createBottomTabNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === 'Observatory') {
-              iconName = focused ? 'planet' : 'planet-outline';
-            } else if (route.name === 'Library') {
-              iconName = focused ? 'library' : 'library-outline';
-            } else if (route.name === 'Audio') {
-              iconName = focused ? 'musical-notes' : 'musical-notes-outline';
-            } else if (route.name === 'Meditation') {
-              iconName = focused ? 'leaf' : 'leaf-outline';
-            } else if (route.name === 'Journal') {
-              iconName = focused ? 'book' : 'book-outline';
-            } else if (route.name === 'Source') {
-              iconName = focused ? 'document-text' : 'document-text-outline';
-            }
-
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarStyle: {
-            backgroundColor: '#0A0A0F',
-            borderTopColor: '#1A1A2E',
-            paddingBottom: 5,
-            paddingTop: 5,
-            height: 60,
-          },
-          tabBarActiveTintColor: colors.quantum,
-          tabBarInactiveTintColor: '#666',
-          headerShown: false,
-        })}
-      >
-        <Tab.Screen 
-          name="Observatory" 
-          component={Observatory}
-          options={{ tabBarLabel: 'Mirror' }}
-        />
-        <Tab.Screen 
-          name="Library" 
-          component={Library}
-          options={{ tabBarLabel: 'Library' }}
-        />
-        <Tab.Screen 
-          name="Audio" 
-          component={MirrorAudio}
-          options={{ tabBarLabel: 'Audio' }}
-        />
-        <Tab.Screen 
-          name="Meditation" 
-          component={Meditation}
-          options={{ tabBarLabel: 'Meditation' }}
-        />
-        <Tab.Screen 
-          name="Journal" 
-          component={Journal}
-          options={{ tabBarLabel: 'Journal' }}
-        />
-        <Tab.Screen 
-          name="Source" 
-          component={SourceMaterial}
-          options={{ tabBarLabel: 'Source' }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
+{
+  "expo": {
+    "name": "MirrorWorking",
+    "slug": "MirrorWorking",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0F"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.apollotunes.MirrorWorking"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0F"
+      },
+      "package": "com.apollotunes.MirrorWorking"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "platforms": ["ios", "android", "web"]
+  }
 }
