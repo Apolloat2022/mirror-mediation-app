@@ -1,19 +1,15 @@
 {
   "version": 2,
-  "buildCommand": "npx expo export --platform web",
-  "outputDirectory": "dist",
+  "builds": [
+    {
+      "src": "dist/**",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
-      "src": "/_expo/(.*)",
-      "dest": "/_expo/$1"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/dist/$1"
     }
   ]
 }
